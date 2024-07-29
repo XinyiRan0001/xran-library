@@ -72,8 +72,8 @@
       <!-- Activity 10: Iterate through the storeTypes array and display the store type and the number of stores that use that type. -->
       <!-- TODO: CODE TO RENDER LIST OF STORE TYPES HERE -->
       <ul>
-          <li v-for="work in austen?.famousWorks" :key="work.title">
-            {{work.title}} ({{work.year}})
+          <li v-for="(country, type) in storeTypesArray" :key="type">
+            {{ type }}: {{ count }} stores
           </li>
         </ul>
 
