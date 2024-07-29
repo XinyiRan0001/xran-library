@@ -72,15 +72,20 @@
       <!-- Activity 10: Iterate through the storeTypes array and display the store type and the number of stores that use that type. -->
       <!-- TODO: CODE TO RENDER LIST OF STORE TYPES HERE -->
       <ul>
-          <li v-for="(country, type) in storeTypesArray" :key="type">
-            {{ type }}: {{ count }} stores
-          </li>
-        </ul>
+        <li v-for="(count, type) in storeTypesArray" :key="type">
+          {{ type }}: {{ count }}
+        </li>
+      </ul>
 
       <h3>Nested Objects</h3>
       <p>Opening Hours:</p>
       <!-- Activity 11: Iterate through the openingHours object and display the day of the week and the opening and closing times. -->
       <!-- TODO: CODE TO RENDER LIST OF OPENING HOURS HERE -->
+      <ul>
+        <li v-for="(hours, day) in openingHoursArray" :key="day">
+          {{ day }}: {{ hours.open }} to {{ hours.close }}
+        </li>
+      </ul>
 
       <h3>Working with Arrays in Objects</h3>
       <!-- Activity 12: Get the top sellers from the bookstores object. -->
@@ -137,6 +142,15 @@ const austen = computed(() => {
   // TODO: CODE TO FIND AUTHOR BY ID HERE
   return authors.find((author) => author.id === 1)
 })
+
+// Activity 10: storeTypesArray
+const storeTypesArray = computed(() => {
+  return bookstores.storeTypes;
+});
+// Activity 11: openingHoursArray
+const openingHoursArray = computed(() => {
+  return bookstores.openingHours
+});
 </script>
 
 <style scoped>
