@@ -90,8 +90,17 @@
       <h3>Working with Arrays in Objects</h3>
       <!-- Activity 12: Get the top sellers from the bookstores object. -->
       <!-- TODO: CODE TO GET TOP SELLERS HERE -->
-      <p>We operate in:</p>
-      <p>Our #1 seller:</p>
+      <p>We operate in:
+        <ul>
+          <li v-for="countries in countryArray" :key="countries">
+            {{countries}}
+          </li>
+        </ul>
+
+      </p>
+      <p>Our #1 seller:
+        {{ bookstores.topSellers[0] }}
+      </p>
     </section>
 
     <section class="lab-section">
@@ -100,8 +109,8 @@
       <button @click="showMessage = !showMessage">Toggle Message</button>
       <!-- Activity 13: Toggle the message visibility when the button is clicked. -->
       <!-- TODO: CODE TO TOGGLE MESSAGE VISIBILITY HERE. Hint: Use the v-if directive. -->
-      <p class="message success">✨ You're a Vue superstar! ✨</p>
-      <p>Click the button to see a message.</p>
+      <p v-if="showMessage" class = "message success">✨ You're a Vue superstar! ✨</p>
+      <p v-else>Click the button to see a message.</p>
     </section>
 
     <section class="lab-section">
@@ -150,6 +159,10 @@ const storeTypesArray = computed(() => {
 // Activity 11: openingHoursArray
 const openingHoursArray = computed(() => {
   return bookstores.openingHours
+});
+// Activity 12: country
+const countryArray = computed(() => {
+  return bookstores.countries
 });
 </script>
 
