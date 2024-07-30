@@ -91,12 +91,7 @@
       <!-- Activity 12: Get the top sellers from the bookstores object. -->
       <!-- TODO: CODE TO GET TOP SELLERS HERE -->
       <p>We operate in:
-        <ul>
-          <li v-for="countries in countryArray" :key="countries">
-            {{countries}}
-          </li>
-        </ul>
-
+        {{ countryArray.join(', ') }}
       </p>
       <p>Our #1 seller:
         {{ bookstores.topSellers[0] }}
