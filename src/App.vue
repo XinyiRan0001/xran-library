@@ -5,8 +5,8 @@ import Form from './components/Form.vue';
 </script>
 
 <template>
-  <JSON />
+  <!--<JSON />-->
   
-  <!--<JSONSolution>-->>
+  <!--<JSONSolution>-->
   <Form />
 </template>
