@@ -5,34 +5,39 @@
                 <h1 class="text-center">User Information Form / Credentials</h1>
                 <form @submit.prevent="submitForm">
                     <div class="row mb-3">
-                        <div class="col-md-6">
+                        <div class="col-12 col-sm-6">
                             <label for="username" class="form-label">Username:</label>
                             <input type="text" id="username" class="form-control" v-model="formData.username">
                         </div>
                     
-                        <div class="col-md-6">
+                        <div class="col-12 col-sm-6">
                             <label for="password" class="form-label">Password:</label>
                             <input type="password" id="password" class="form-control" v-model="formData.password">
                         </div>
                     </div>
+                    <div class="row mb-3">
+                        <div class="col-12 col-sm-6">
+                            <div class="form-check">
+                                <input type="checkbox" id="isAustralian" v-model="formData.isAustralian" class="form-check-input">
+                                <label for="isAustralian" class="form-check-label">Australian Resident?</label>
+                            </div>
+                        </div>
 
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" id="isAustralian" v-model="formData.isAustralian" class="form-check-input">
-                        <label for="isAustralian" class="form-check-label">Australian Resident?</label>
+                        <div class="col-12 col-sm-6">
+                            <label for="gender" class="form-label">Gender:</label>
+                            <select id="gender" class="form-select" v-model="formData.gender">
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="gender" class="form-label">Gender:</label>
-                        <select id="gender" class="form-select" v-model="formData.gender">
-                            <option value="female">Female</option>
-                            <option value="male">Male</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="reason" class="form-label">Reason For Joining:</label>
-                        <textarea id="reason" rows="3" class="form-control" v-model="formData.reason"></textarea>
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <label for="reason" class="form-label">Reason For Joining:</label>
+                            <textarea id="reason" rows="3" class="form-control" v-model="formData.reason"></textarea>
+                        </div>
                     </div>
 
                     <div class="text-center">
@@ -108,4 +113,19 @@ const clearForm = () => {
 .list-group-item {
     padding: 10px;
 }
+
+@media (max-width: 575.98px) {
+  .col-12.col-sm-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .col-12.col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
 </style>
